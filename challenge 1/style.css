@@ -1,0 +1,117 @@
+/* rests */
+body,
+p {
+  margin: 0;
+  padding: 0;
+}
+main {
+  display: flex;
+  margin: 10px;
+}
+
+main div {
+  padding: 50px;
+  min-height: 100vh;
+  width: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.box-one {
+  border: solid black 2px;
+  background-color: #ffcc00;
+  animation-name: backgroundchange;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.box-one p {
+  font-size: 40px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space;
+  position: relative;
+  top: 50%;
+  -webkit-animation: colorchange1 3s infinite alternate;
+}
+.box-two {
+  border: solid black 2px;
+  background-color: white;
+}
+.box-two p {
+  font-size: 40px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space;
+  position: relative;
+  top: 50%;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  animation-timing-function: ease-in-out;
+}
+.box-three {
+  border: solid black 2px;
+  background-color: blue;
+}
+.box-three p {
+  font-size: 40px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space;
+  position: relative;
+  top: 50%;
+  -webkit-animation: colorchange3 2s infinite alternate;
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes backgroundchange {
+  50% {
+    background-color: #ffcc00;
+  }
+  50% {
+    background-color: blue;
+  }
+}
+
+@-webkit-keyframes colorchange {
+  50% {
+    color: blue;
+  }
+}
+@-webkit-keyframes colorchange1 {
+  50% {
+    color: white;
+  }
+}
+@-webkit-keyframes colorchange3 {
+  0% {
+    color: white;
+    top: 0px;
+  }
+  50% {
+    color: black;
+  }
+  100% {
+    color: white;
+    top: 500px;
+  }
+}
